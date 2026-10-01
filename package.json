@@ -1,0 +1,25 @@
+{
+  "name": "etsy-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack Etsy Shop Monorepo targeting Render (API) and Vercel (Web)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:api & npm run dev:web",
+    "dev:api": "npm run dev --workspace=@etsy-shop/api",
+    "dev:web": "npm run dev --workspace=@etsy-shop/web",
+    "build:shared": "npm run build --workspace=@etsy-shop/shared",
+    "build:api": "npm run build --workspace=@etsy-shop/api",
+    "build:web": "npm run build --workspace=@etsy-shop/web",
+    "build": "npm run build:shared && npm run build:api && npm run build:web",
+    "start:api": "npm run start --workspace=@etsy-shop/api",
+    "test": "npm run test --workspaces --if-present",
+    "test:api": "npm run test --workspace=@etsy-shop/api"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

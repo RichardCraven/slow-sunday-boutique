@@ -1,0 +1,54 @@
+:root {
+  --etsy-orange: #f1641e;
+  --etsy-orange-hover: #d85413;
+  --etsy-orange-soft: #fff3ec;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fbf9f7;
+  --bg-tertiary: #f4eee9;
+  --text-primary: #222222;
+  --text-secondary: #595959;
+  --text-muted: #888888;
+  --border-light: #e1deda;
+  --border-subtle: #ede9e3;
+  --badge-green: #258635;
+  --badge-green-bg: #eaf6ec;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
