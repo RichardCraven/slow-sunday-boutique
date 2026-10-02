@@ -4,10 +4,11 @@ import './App.css';
 
 const CATEGORIES = [
   'All',
-  'Home & Living',
-  'Jewelry & Accessories',
-  'Clothing',
-  'Craft Supplies',
+  'Cozy Apparel',
+  'Ceramics & Mugs',
+  'Linen & Totes',
+  'Aromatherapy',
+  'Botanical Decor',
   'Vintage'
 ];
 
@@ -180,15 +181,22 @@ export function App() {
       <header className="navbar">
         <div className="nav-main">
           <div className="logo-group" onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}>
-            <span className="brand-logo">Etsy</span>
-            <span className="brand-badge">Shop</span>
+            <img
+              src="/assets/logo.jpg"
+              alt="Slow Sunday Boutique"
+              className="brand-logo-img"
+            />
+            <div className="brand-text-wrap">
+              <span className="brand-logo">Slow Sunday Boutique</span>
+              <span className="brand-tagline">Cozy Living • Botanical Goods</span>
+            </div>
           </div>
 
           <form className="search-bar" onSubmit={handleSearchSubmit}>
             <input
               type="text"
               className="search-input"
-              placeholder="Search for handmade ceramics, vintage leather, gifts..."
+              placeholder="Search for Comfort Colors tees, cozy crewnecks, botanical mugs, linen totes..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
             />
@@ -245,15 +253,16 @@ export function App() {
       {/* Hero */}
       <section className="hero-banner">
         <div className="hero-content">
-          <h1 className="hero-title">Discover things you'll love. Support independent makers.</h1>
+          <h1 className="hero-title">Live gently. Embrace the slow Sunday feeling.</h1>
           <p className="hero-subtitle">
-            Every item in our shop is handcrafted or vintage-curated with care. Direct from workshop to your home.
+            Thoughtfully curated cozy apparel, garment-dyed Comfort Colors tees, hand-embroidered fleece crewnecks, botanical ceramic mugs, and washed linen totes for effortless, grounded living.
           </p>
           <div className="hero-tags">
-            <span className="hero-tag">✨ 100% Verified Artisans</span>
+            <span className="hero-tag">🌿 Garment-Dyed Comfort Colors</span>
+            <span className="hero-tag">☕ Hand-Thrown Botanical Mugs</span>
+            <span className="hero-tag">☁️ Cozy Fleece Crewnecks</span>
+            <span className="hero-tag">👜 French Washed Linen Totes</span>
             <span className="hero-tag">🚚 Free Shipping over $50</span>
-            <span className="hero-tag">🛡️ Carbon-Neutral Delivery</span>
-            <span className="hero-tag">⚡ Render API Powered</span>
           </div>
         </div>
       </section>
@@ -499,7 +508,7 @@ export function App() {
       <footer className="footer">
         <div className="footer-inner">
           <div>
-            <strong>EtsyShop Monorepo</strong> • Melkor Factory Ecosystem
+            <strong>Slow Sunday Boutique</strong> • Botanical &amp; Cozy Slow Living Goods
           </div>
           <div>
             Frontend: Vercel (Vite + React) • Backend: Render (Node.js + Express)

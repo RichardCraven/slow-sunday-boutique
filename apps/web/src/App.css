@@ -26,28 +26,46 @@
 
 .logo-group {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
   cursor: pointer;
+}
+
+.brand-logo-img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ede9e3;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.logo-group:hover .brand-logo-img {
+  transform: scale(1.05);
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-logo {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 700;
-  color: var(--etsy-orange);
-  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.15;
 }
 
-.brand-badge {
+.brand-tagline {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #7b6a58;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  background: var(--etsy-orange-soft);
-  color: var(--etsy-orange);
-  padding: 2px 7px;
-  border-radius: 6px;
-  letter-spacing: 0.5px;
 }
 
 .search-bar {
