@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Product, CartItem, HealthResponse, Order } from '@etsy-shop/shared';
+import { fallbackProducts } from './data/fallbackProducts';
 import './App.css';
 
 const CATEGORIES = [
@@ -60,9 +61,22 @@ export function App() {
       }
       const json = await res.json();
       setProducts(json.data || []);
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Unknown error';
-      setError(msg);
+    } catch {
+      // Graceful offline fallback: if backend is offline or starting, load bundled catalog
+      let filtered = [...fallbackProducts];
+      if (selectedCategory !== 'All') {
+        filtered = filtered.filter(p => p.category.toLowerCase() === selectedCategory.toLowerCase());
+      }
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.tags.some(tag => tag.toLowerCase().includes(q)) ||
+          p.artisanName.toLowerCase().includes(q)
+        );
+      }
+      setProducts(filtered);
     } finally {
       setLoading(false);
     }

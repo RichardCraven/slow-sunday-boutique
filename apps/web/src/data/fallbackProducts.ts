@@ -1,6 +1,6 @@
-import { Product } from '@etsy-shop/shared';
+import type { Product } from '@etsy-shop/shared';
 
-export const initialProducts: Product[] = [
+export const fallbackProducts: Product[] = [
   {
     id: 'prod-1',
     title: 'Handcrafted Botanical Wildflower Ceramic Mug',

@@ -56,7 +56,7 @@ npm run dev
 
 # Or run individually:
 npm run dev:api  # Express API runs on http://localhost:10000
-npm run dev:web  # React Storefront runs on http://localhost:3000
+npm run dev:web  # React Storefront runs on http://localhost:3333
 ```
 
 ## Deployment Targets
