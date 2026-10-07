@@ -12,12 +12,12 @@ echo "📦 Staging changes..."
 git add .
 
 echo "💾 Committing updates..."
-git commit -m "feat: configure port 3333 and offline catalog fallback" || echo "Nothing new to commit."
+git commit -m "feat: link vercel to live render backend at slow-sunday-boutique.onrender.com" || echo "Nothing new to commit."
 
-echo "🚀 Creating GitHub repository 'slow-sunday-boutique' and pushing..."
-gh repo create slow-sunday-boutique --public --source=. --remote=origin --push
+echo "🚀 Pushing changes to GitHub..."
+git push origin main || git push -u origin main
 
 echo ""
-echo "🎉 Done! Your repository is live at:"
+echo "🎉 Done! Your repository is updated at:"
 echo "👉 https://github.com/RichardCraven/slow-sunday-boutique"
 echo "=================================================="

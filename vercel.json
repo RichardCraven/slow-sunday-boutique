@@ -3,5 +3,11 @@
   "framework": "vite",
   "outputDirectory": "apps/web/dist",
   "buildCommand": "npm run build:shared && npm run build:web",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://slow-sunday-boutique.onrender.com/api/:path*"
+    }
+  ]
 }

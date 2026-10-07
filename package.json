@@ -15,6 +15,7 @@
     "build:api": "npm run build --workspace=@etsy-shop/api",
     "build:web": "npm run build --workspace=@etsy-shop/web",
     "build": "npm run build:shared && npm run build:api && npm run build:web",
+    "start": "npm run start:api",
     "start:api": "npm run start --workspace=@etsy-shop/api",
     "test": "npm run test --workspaces --if-present",
     "test:api": "npm run test --workspace=@etsy-shop/api",
